@@ -1,0 +1,41 @@
+﻿<Window x:Class="Async.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Async"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="500">
+    <Grid>
+        
+        <StackPanel x:Name="signInPanel" >
+            <StackPanel Orientation="Horizontal" Margin="40">
+                <TextBlock  FontSize="40" Foreground="#9479D9">Username</TextBlock>
+                <TextBox x:Name="UsernameTxtbox" FontSize="30"  Margin="10,0,0,0" Width="220" Height="50"></TextBox>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" Margin="40">
+                <TextBlock FontSize="40" Foreground="#9479D9">Password</TextBlock>
+                <TextBox x:Name="PasswordTxtBox" FontSize="30"  Margin="20,0,0,0" Width="220" Height="50"></TextBox>
+            </StackPanel>
+            <Button Foreground="#EB5463" Background="#48CEAD" FontSize="30" Margin="30,0,0,0" Width="250" Height="60" Click="Button_Click">Sign In</Button>
+        </StackPanel>
+
+        <Grid  Name="UserPanel" Background="#DC9BAB" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="BookId"  FontSize="30" Padding="5,5,2,5"></TextBlock>
+                <TextBox x:Name="BookIdtxtbox"   FontSize="30" TextChanged="bookIdtxtbox_TextChanged"></TextBox>
+                <TextBlock Text="Lib"  FontSize="30" Padding="5,5,2,5"></TextBlock>
+                <ComboBox x:Name="libscombobox" Margin="0,20,0,0"  FontSize="30" Height="50" >
+                </ComboBox>
+            </StackPanel>
+            <StackPanel  Grid.Column="1">
+                <Button x:Name="takeButton"  Content="Take" FontSize="30" Height="80" Margin="0,100,0,0" Width="200"  Background="#42BA9E" Click="takeButton_Click" ></Button>
+            </StackPanel>  
+    </Grid>
+    </Grid>
+</Window>
